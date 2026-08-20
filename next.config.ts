@@ -1,2 +1,7 @@
-m«ëˆ§½©buªàºg§·õ,z»?²éã‰«!»ðèréžžÛ?
-‡^Çý´Û­<ÛOìŠ×¬¦[ Š{"µë(¥éÚ‰»§vWþw±µÊ'~(-±KæÚ±î¸Ø[žé¢Šwâ•ê(º×â•æÛ­æ¤n·š‘éÜ¡×¢ëiºÛ©Š{h–)Þ²‡åzx-†{¦×^r‡^uç(uè§¦ëa…éiv+)•¬­†+&zËè¢ž›­Šznµø¥y×Ÿjém~ŠìµØ§¢‹­¦ëhºÚnµø¥y×Ÿjém~ŠìµÚ.
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* config options here */
+};
+
+export default nextConfig;

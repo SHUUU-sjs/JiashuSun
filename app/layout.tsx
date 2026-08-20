@@ -1,2 +1,25 @@
-m«ëˆ§½©buªàºg§·õ,z»?²éã‰«!»ðèréžžÛ?
-‡^Çý´Û­<ÛOìŠ×¬¦[ Š{"µë(¥éÚ‰»§vWýªiþV²¢ëm³,j›jÇºà7an{¦Š)ßŠW¨¢ë_ŠW›n·š‘ºÞjG§r‡^v‹­¦ën¦)í¢X§zÊ•éà¶î˜7]yÊy×œ¡×¢ž›­†¥¥Ø¬¦V²¶¬™ë,j¢Šzn¶)éº×â•ç^}«¥µú+²×bžŠ.¶›­¢ëiº×â•ç^}«¥µú+²×hº
+import type { Metadata } from "next";
+import { headers } from "next/headers";
+import "./globals.css";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = await headers();
+  const host = requestHeaders.get("x-forwarded-host") ?? requestHeaders.get("host") ?? "localhost:3000";
+  const protocol = requestHeaders.get("x-forwarded-proto") ?? "https";
+  const imageUrl = `${protocol}://${host}/og.png`;
+
+  return {
+    title: "Jiashu Sun â€” Designer",
+    description: "Jiashu Sun is an interdisciplinary designer making useful things feel human.",
+    openGraph: {
+      title: "Jiashu Sun â€” Designer",
+      description: "Making useful things feel human.",
+      images: [{ url: imageUrl, width: 1731, height: 909, alt: "Jiashu Sun â€” Designer" }],
+    },
+    twitter: { card: "summary_large_image", title: "Jiashu Sun â€” Designer", images: [imageUrl] },
+  };
+}
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body>{children}</body></html>;
+}
